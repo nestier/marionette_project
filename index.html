@@ -7,18 +7,21 @@
  </head>
 
  <body>
-
- <div class="navbar navbar-inverse navbar-fixed-top">
- <div class="navbar-inner">
- <div class="container">
- <span class="brand">Contact manager</span>
- </div>
- </div>
- </div>
-
  <div class="container">
  <p>Here is static content in the web page. You'll notice that it gets
  replaced by our app as soon as we start it.</p>
+ </div>
+ <div>
+  <form action='' method='post' id='form' >
+  <fieldset>
+    <legend>Personal information:</legend>
+   First name:<br>
+   <input type="text" name="firstname" id ='firstname'><br>
+   Last name:<br>
+   <input type="text" name="lastname" id ='lastname'>
+   <input type="submit" value="Submit" id ='submit'>
+  </form>
+  </fieldset>
  </div>
 
  <script src="./assets/js/vendor/jquery.js"></script>
@@ -26,6 +29,17 @@
  <script src="./assets/js/vendor/underscore.js"></script>
  <script src="./assets/js/vendor/backbone.js"></script>
  <script src="./assets/js/vendor/backbone.marionette.js"></script>
-
+ <script>
+  function showValues() {
+     var str = $( "#firstname" ).val();
+     var str2 = $( "#lastname" ).val();
+     console.log( str, str2 );
+              }
+ $( "#form" ).submit(function(e){
+    e.preventDefault();
+    showValues()
+      });
+      
+ </script>
  </body>
  </html>
